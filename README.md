@@ -84,7 +84,7 @@ Finally, for those who need direct access to API we provide GraphQL API endpoint
 ```graphql
 # POST https://core.tryzero.com/v1/graphql
 
-query zeroSecrets($token: String!, $slugs: [String!]) {
+query ZeroSecrets($token: String!, $slugs: [String!]) {
   secrets(zeroToken: $token, pick: $slugs) {
     __typename
     id
