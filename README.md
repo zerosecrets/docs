@@ -1,13 +1,13 @@
 # What is Zero?
-Zero is a secrets manager specifically designed for managing APIs credentials. It makes work with most of the popular APIs seamless and intuitive. Its goal is simplicity and performance. The core engine is written in Rust and serves a modern GraphQL API.
+Zero is a secrets manager specifically designed for managing API credentials. It makes working with most popular APIs seamless and intuitive. Its goal is simplicity and high performance. The core engine is written in Rust and serves a modern GraphQL API.
 
 # How does it work?
-Zero provides multi-platform SDKs (TypeScript/Go/Python), CI/CD, and cloud tooling for requesting and using secrets in app runtime and OS environment. Users are allowed to define one or more Zero tokens, assign secrets to each one of them in web UI, and then request it in their apps using SDK or other relevant instruments provided by Zero.
+Zero provides multi-platform SDKs (TypeScript/Go/Python), CI/CD, and cloud tooling for requesting and using secrets in application at runtime and OS environment. Users can define one or more Zero tokens and assign secrets to each of them in a web UI. Then, the secrets can be requested by the application or script using one of Zero’s SDKs.
 
 # Installation and usage
 ## App runtime
 
-First you’ll need to install the SDK. Follow the example for your platform:
+First you’ll need to install the SDK for your platform:
 ```sh
 npm install @zerosecrets/zero
 ```
@@ -19,8 +19,7 @@ go get github.com/zerosecrets/go-sdk
 ```sh
 poetry install zero-sdk
 ```
-
-Once the SDK is available in your app you can use it to fetch the secrets. Please don’t forget that you’ll need your Zero-token to do this. You can create one in the web UI. Don’t share it publicly! Examples below imply that you store a Zero-token in the OS environment.
+Once the SDK is installed, you can use it to fetch the secrets. Please don’t forget that you’ll need a Zero token to do this. You can create one in the web UI. Don’t share it publicly! In the examples below, we assume the Zero token is available as an environment variable.
 
 __TypeScript__
 
@@ -64,7 +63,7 @@ secrets = zero(token=ZERO_TOKEN, apis=["aws"]).fetch()
 print(secrets) # {'aws': {'secret': 'value', 'secret2': 'value2'}}
 ```
 ## GitHub action
-For the case when you need secrets to be applied in your CI/CD we built GtiHub action. It takes Zero-token as an input, downloads the secrets and sets environment variables. Please store Zero-token in GitHub secrets, it’s a very sensitive data, and should never be exposed publicly:
+When you need secrets in your CI/CD pipeline, you can use our  GitHub action. It takes a Zero token as input, downloads the secrets, and sets environment variables. The Zero token should be stored as a GitHub secret since it is sensitive data that **should never be exposed publicly**:,
 
 ```yml
 steps:
@@ -79,7 +78,7 @@ steps:
       env | grep ZERO_SECRET
 ```
 ## GraphQL API
-Finally, for those who need direct access to API we provide GraphQL API endpoint. This is how you can query your secrets. Notice that as it’s GraphQL API you can query as many Zero-tokens per single request as you need:
+Finally, for those who need more direct access to Zero, we provide a GraphQL API. The code below shows how to query your secrets. Since it is a GraphQL API, you can request many  Zero tokens in a single API call.
 
 ```graphql
 # POST https://core.tryzero.com/v1/graphql
