@@ -23,7 +23,9 @@ go get github.com/zerosecrets/go-sdk
 ```sh
 poetry install zero-sdk
 ```
-Once the SDK is installed, you can use it to fetch the secrets. Please don’t forget that you’ll need a Zero token to do this. You can create one in the web UI. Don’t share it publicly! In the examples below, we assume the Zero token is available as an environment variable.
+Once the SDK is installed, you can use it to fetch the secrets. Please don’t forget that you’ll need a Zero token to do this. You can create one in the web UI.
+
+> ⚠️ Don’t share it publicly! In the examples below, we assume the Zero token is available as an environment variable.
 
 __TypeScript__
 
