@@ -7,15 +7,19 @@ Zero provides multi-platform SDKs (TypeScript/Go/Python), CI/CD, and cloud tooli
 # Installation and usage
 ## App runtime
 
-First you’ll need to install the SDK for your platform:
+First you’ll need to install the SDK for your platform.
+
+**Node JS**:
 ```sh
 npm install @zerosecrets/zero
 ```
 
+**Go**:
 ```sh
 go get github.com/zerosecrets/go-sdk
 ```
 
+**Python**:
 ```sh
 poetry install zero-sdk
 ```
