@@ -89,8 +89,8 @@ Finally, for those who need more direct access to Zero, we provide a GraphQL API
 ```graphql
 # POST https://core.tryzero.com/v1/graphql
 
-query ZeroSecrets($token: String!, $slugs: [String!]) {
-  secrets(zeroToken: $token, pick: $slugs) {
+query {
+  secrets(zeroToken: "YOUR_ZERO_TOKEN", pick: ["pick-some", "of-your-apis"]) {
     __typename
     id
     name
