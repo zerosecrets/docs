@@ -5,7 +5,7 @@ Zero is a secrets manager specifically designed for managing API credentials. It
 Zero provides multi-platform SDKs (TypeScript/Go/Python), CI/CD, and cloud tooling for requesting and using secrets in application at runtime and OS environment. Users can define one or more Zero tokens and assign secrets to each of them in a web UI. Then, the secrets can be requested by the application or script using one of Zero’s SDKs.
 
 # Installation and usage
-## In an application at Runtime
+## In an application at runtime
 
 First you’ll need to install the SDK for your platform.
 
