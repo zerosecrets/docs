@@ -91,12 +91,9 @@ Finally, for those who need more direct access to Zero, we provide a GraphQL API
 
 query {
   secrets(zeroToken: "YOUR_ZERO_TOKEN", pick: ["pick-some", "of-your-apis"]) {
-    __typename
-    id
     name
 
     fields {
-      __typename
       name
       value
     }
