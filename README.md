@@ -19,7 +19,7 @@ Instructions on how to use SDK can be found in their respective repositories.
 Finally, for those who need more direct access to Zero, we provide a GraphQL API. The code below shows how to query your secrets. Since it is a GraphQL API, you can request many  Zero tokens in a single API call.
 
 ```graphql
-# POST https://core.tryzero.com/v1/graphql
+# POST https://core.tryzero.com/graphql
 
 query {
   secrets(zeroToken: "YOUR_ZERO_TOKEN", pick: ["pick-some", "of-your-apis"]) {
